@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ionicBootstrap, AlertController, LoadingController, NavController } from '../../../../../src';
+import { ionicBootstrap, AlertController, LoadingController, NavController, ViewDidEnter } from '../../../../../src';
 import { FormBuilder, ControlGroup, Validators } from '@angular/common';
 
 
 @Component({
   templateUrl: 'main.html'
 })
-export class E2EPage {
+export class E2EPage implements ViewDidEnter {
 
   constructor(public alertCtrl: AlertController, public navCtrl: NavController) {}
 
@@ -69,7 +69,7 @@ export class E2EPage {
     </ion-content>
   `
 })
-class AnotherPage {
+class AnotherPage implements ViewDidEnter {
   form: ControlGroup;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public builder: FormBuilder) {

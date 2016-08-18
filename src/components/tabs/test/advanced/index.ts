@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { App, ionicBootstrap, NavController, NavParams, ModalController, ViewController, Tabs, Tab } from '../../../../../src';
+import { App, ionicBootstrap, NavController, NavParams, ModalController, ViewController, ViewWillEnter, ViewDidEnter, ViewLoaded, ViewWillLeave, ViewDidLeave, ViewWillUnload, ViewDidUnload, Tabs, Tab } from '../../../../../src';
 
 
 @Component({
@@ -20,7 +20,7 @@ class SignIn {
 @Component({
   templateUrl: './modalChat.html'
 })
-class ChatPage {
+class ChatPage implements ViewLoaded, ViewDidUnload {
   constructor(public viewCtrl: ViewController) {}
 
   ionViewLoaded() {
@@ -36,7 +36,7 @@ class ChatPage {
 @Component({
   templateUrl: './tabs.html'
 })
-class TabsPage {
+class TabsPage implements ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewDidUnload {
   tab1Root = Tab1Page1;
   tab2Root = Tab2Page1;
   tab3Root = Tab3Page1;
@@ -89,7 +89,7 @@ class TabsPage {
 @Component({
   templateUrl: './tab1page1.html'
 })
-class Tab1Page1 {
+class Tab1Page1 implements ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewDidUnload {
   userId: string;
 
   constructor(public navCtrl: NavController, public app: App, public tabs: Tabs, public params: NavParams) {
@@ -140,7 +140,7 @@ class Tab1Page1 {
 @Component({
   templateUrl: './tab1page2.html'
 })
-class Tab1Page2 {
+class Tab1Page2 implements ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewDidUnload {
   constructor(public navCtrl: NavController) {}
 
   push() {
@@ -172,7 +172,7 @@ class Tab1Page2 {
 @Component({
   templateUrl: './tab1page3.html'
 })
-class Tab1Page3 {
+class Tab1Page3 implements ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewDidUnload {
   constructor(public navCtrl: NavController) {}
 
   ionViewWillEnter() {
@@ -203,7 +203,7 @@ class Tab1Page3 {
 @Component({
   templateUrl: './tab2page1.html'
 })
-class Tab2Page1 {
+class Tab2Page1 implements ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewDidUnload {
   constructor(public navCtrl: NavController) {}
 
   push() {
@@ -235,7 +235,7 @@ class Tab2Page1 {
 @Component({
   templateUrl: './tab2page2.html'
 })
-class Tab2Page2 {
+class Tab2Page2 implements ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewDidUnload {
   constructor(public navCtrl: NavController) {}
 
   push() {
@@ -267,7 +267,7 @@ class Tab2Page2 {
 @Component({
   templateUrl: './tab2page3.html'
 })
-class Tab2Page3 {
+class Tab2Page3 implements ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewDidUnload {
   constructor(public navCtrl: NavController) {}
 
   ionViewWillEnter() {
@@ -298,7 +298,7 @@ class Tab2Page3 {
 @Component({
   templateUrl: './tab3page1.html'
 })
-class Tab3Page1 {
+class Tab3Page1 implements ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewDidUnload {
 
   ionViewWillEnter() {
     console.log('Tab3Page1, ionViewWillEnter');

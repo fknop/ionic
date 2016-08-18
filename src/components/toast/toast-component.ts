@@ -5,6 +5,7 @@ import { Animation } from '../../animations/animation';
 import { Config } from '../../config/config';
 import { isPresent } from '../../util/util';
 import { NavParams } from '../nav/nav-params';
+import { ViewDidEnter } from '../nav/nav-interfaces';
 import { Transition, TransitionOptions } from '../../transitions/transition';
 import { ViewController } from '../nav/view-controller';
 
@@ -34,7 +35,7 @@ import { ViewController } from '../nav/view-controller';
     '[attr.aria-describedby]': 'descId',
   },
 })
-export class ToastCmp implements AfterViewInit {
+export class ToastCmp implements AfterViewInit, ViewDidEnter {
   private d: {
     message?: string;
     cssClass?: string;

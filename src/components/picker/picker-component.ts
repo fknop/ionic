@@ -9,6 +9,7 @@ import { clamp, isNumber, isPresent, isString } from '../../util/util';
 import { Config } from '../../config/config';
 import { Key } from '../../util/key';
 import { NavParams } from '../nav/nav-params';
+import { ViewLoaded, ViewDidEnter } from '../nav/nav-interfaces';
 import { Picker } from './picker';
 import { PickerOptions, PickerColumn, PickerColumnOption } from './picker-options';
 import { Transition, TransitionOptions } from '../../transitions/transition';
@@ -373,7 +374,7 @@ export class PickerColumnCmp {
   },
   encapsulation: ViewEncapsulation.None,
 })
-export class PickerCmp {
+export class PickerCmp implements ViewLoaded, ViewDidEnter {
   @ViewChildren(PickerColumnCmp) private _cols: QueryList<PickerColumnCmp>;
   private d: PickerOptions;
   private enabled: boolean;

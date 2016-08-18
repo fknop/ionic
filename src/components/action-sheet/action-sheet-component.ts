@@ -8,6 +8,7 @@ import { Form } from '../../util/form';
 import { Icon } from '../icon/icon';
 import { Key } from '../../util/key';
 import { NavParams } from '../nav/nav-params';
+import { ViewLoaded, ViewDidEnter } from '../nav/nav-interfaces';
 import { Transition, TransitionOptions } from '../../transitions/transition';
 import { ViewController } from '../nav/view-controller';
 
@@ -46,7 +47,7 @@ import { ViewController } from '../nav/view-controller';
   },
   encapsulation: ViewEncapsulation.None,
 })
-export class ActionSheetCmp {
+export class ActionSheetCmp implements ViewLoaded, ViewDidEnter {
   private d: {
     title?: string;
     subTitle?: string;

@@ -8,6 +8,7 @@ import { Config } from '../../config/config';
 import { isPresent } from '../../util/util';
 import { Key } from '../../util/key';
 import { NavParams } from '../nav/nav-params';
+import { ViewLoaded, ViewDidEnter } from '../nav/nav-interfaces';
 import { Transition, TransitionOptions } from '../../transitions/transition';
 import { ViewController } from '../nav/view-controller';
 
@@ -73,7 +74,7 @@ import { ViewController } from '../nav/view-controller';
   },
   encapsulation: ViewEncapsulation.None,
 })
-export class AlertCmp {
+export class AlertCmp implements ViewLoaded, ViewDidEnter {
   private activeId: string;
   private descId: string;
   private d: {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ionicBootstrap, NavController } from '../../../../../src';
+import { ionicBootstrap, NavController, ViewDidEnter } from '../../../../../src';
 
 
 let delay = 100;
@@ -15,7 +15,7 @@ let count = 0;
     </ion-content>
   `
 })
-class Page1 {
+class Page1 implements ViewDidEnter {
   tmr: number;
 
   constructor(private nav: NavController) {}
@@ -49,7 +49,7 @@ class Page1 {
     </ion-content>
   `
 })
-class Page2 {
+class Page2 implements ViewDidEnter {
   tmr: number;
 
   constructor(public navCtrl: NavController) {}

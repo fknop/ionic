@@ -8,6 +8,7 @@ import { CSS, nativeRaf } from '../../util/dom';
 import { isPresent, pascalCaseToDashCase } from '../../util/util';
 import { Key } from '../../util/key';
 import { NavParams } from '../nav/nav-params';
+import { ViewWillEnter } from '../nav/nav-interfaces';
 import { PageTransition } from '../../transitions/page-transition';
 import { TransitionOptions } from '../../transitions/transition';
 import { ViewController } from '../nav/view-controller';
@@ -31,7 +32,7 @@ import { ViewController } from '../nav/view-controller';
   `,
   directives: [Backdrop]
 })
-export class PopoverCmp {
+export class PopoverCmp implements ViewWillEnter {
   @ViewChild('viewport', {read: ViewContainerRef}) viewport: ViewContainerRef;
 
   private d: {

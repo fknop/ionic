@@ -1,6 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 
-import { ActionSheetController, App, Config, ionicBootstrap, ModalController, NavController, NavParams, PageTransition, Platform, TransitionOptions, ViewController } from '../../../../../src';
+import { ActionSheetController, App, Config, ionicBootstrap, ModalController, NavController, NavParams, PageTransition, Platform, TransitionOptions, ViewController, ViewLoaded, ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewWillUnload, ViewDidUnload } from '../../../../../src';
 
 
 @Injectable()
@@ -29,7 +29,7 @@ class SomeAppProvider {
 @Component({
   templateUrl: 'main.html'
 })
-class E2EPage {
+class E2EPage implements ViewLoaded, ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave {
   platforms: string[];
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, config: Config, platform: Platform) {
@@ -192,7 +192,7 @@ class NavigableModal2 {
   `,
   providers: [SomeComponentProvider]
 })
-class ModalPassData {
+class ModalPassData implements ViewLoaded, ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave {
   data: any;
 
   constructor(params: NavParams, public viewCtrl: ViewController, someComponentProvider: SomeComponentProvider, someAppProvider: SomeAppProvider) {
@@ -335,7 +335,7 @@ class ModalWithInputs {
 @Component({
   template: '<ion-nav [root]="root"></ion-nav>'
 })
-class ContactUs {
+class ContactUs implements ViewLoaded, ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewWillUnload, ViewDidUnload {
   root = ModalFirstPage;
 
   constructor() {
@@ -393,7 +393,7 @@ class ContactUs {
     </ion-content>
   `
 })
-class ModalFirstPage {
+class ModalFirstPage implements ViewLoaded, ViewWillEnter, ViewDidEnter {
   items: any[] = [];
 
   constructor(public navCtrl: NavController, public app: App, public actionSheetCtrl: ActionSheetController) {
@@ -491,7 +491,7 @@ class ModalFirstPage {
     </ion-content>
   `
 })
-class ModalSecondPage {
+class ModalSecondPage implements ViewLoaded, ViewWillEnter, ViewDidEnter {
   constructor(public navCtrl: NavController, params: NavParams) {
     console.log('Second page params:', params);
   }

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ionicBootstrap, AlertController, ModalController, ViewController } from '../../../../../src';
+import { ionicBootstrap, AlertController, ModalController, ViewController, ViewDidLeave, ViewDidEnter } from '../../../../../src';
 
 
 @Component({
   templateUrl: 'main.html'
 })
-class E2EPage {
+class E2EPage implements ViewDidLeave, ViewDidEnter {
   testConfirmOpen: boolean = false;
   testPromptOpen: boolean = false;
   testConfirmResult: string = '';

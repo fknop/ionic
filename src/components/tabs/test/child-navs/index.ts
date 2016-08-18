@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ionicBootstrap, NavController, App, Alert, Modal, ViewController, Tab, Tabs } from '../../../../../src';
+import { ionicBootstrap, NavController, App, Alert, Modal, ViewController, ViewWillEnter, Tab, Tabs } from '../../../../../src';
 
 
 //
@@ -110,7 +110,7 @@ class ThirdPage {
   </ion-content>
   `
 })
-class FourthPage {
+class FourthPage implements ViewWillEnter {
   private items: string[];
 
   ionViewWillEnter() {

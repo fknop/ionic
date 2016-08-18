@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ionicBootstrap, LoadingController, NavController } from '../../../../../src';
+import { ionicBootstrap, LoadingController, NavController, ViewLoaded } from '../../../../../src';
 
 
 @Component({
@@ -211,7 +211,7 @@ class E2EPage {
     </ion-footer>
   `
 })
-class Page2 {
+class Page2 implements ViewLoaded {
   constructor(public navCtrl: NavController) {}
 
   ionViewLoaded() {

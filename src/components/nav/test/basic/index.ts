@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, AlertController, Content } from '../../../../../src';
 import { ionicBootstrap, App } from '../../../../../src';
-import { NavParams, ViewController } from '../../../../../src';
+import { NavParams, ViewController, ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewWillUnload, ViewDidUnload } from '../../../../../src';
 
 
 @Component({
@@ -242,7 +242,7 @@ class FullPage {
     </ion-footer>
   `
 })
-class PrimaryHeaderPage {
+class PrimaryHeaderPage implements ViewWillEnter {
   constructor(
     public navCtrl: NavController,
     public alertCtrl: AlertController,
@@ -331,7 +331,7 @@ class PrimaryHeaderPage {
     </ion-footer>
   `
 })
-class AnotherPage {
+class AnotherPage implements ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave, ViewWillUnload, ViewDidUnload {
   bbHideToggleVal = false;
   bbCount = 0;
 

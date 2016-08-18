@@ -6,6 +6,7 @@ import { Backdrop } from '../backdrop/backdrop';
 import { Config } from '../../config/config';
 import { isDefined, isPresent, isUndefined } from '../../util/util';
 import { NavParams } from '../nav/nav-params';
+import { ViewDidEnter } from '../nav/nav-interfaces';
 import { Spinner } from '../spinner/spinner';
 import { Transition, TransitionOptions } from '../../transitions/transition';
 import { ViewController } from '../nav/view-controller';
@@ -31,7 +32,7 @@ import { ViewController } from '../nav/view-controller';
   },
   encapsulation: ViewEncapsulation.None,
 })
-export class LoadingCmp {
+export class LoadingCmp implements ViewDidEnter {
   private d: {
     spinner?: string;
     content?: string;

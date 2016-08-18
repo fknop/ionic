@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ionicBootstrap, NavController } from '../../../../../src';
+import { ionicBootstrap, NavController, ViewWillEnter } from '../../../../../src';
 
 @Component({
   template: `<ion-nav [root]="root"></ion-nav>`,
@@ -108,7 +108,7 @@ class ThirdPage {
   </ion-content>
   `
 })
-class FourthPage {
+class FourthPage implements ViewWillEnter {
   private items: string[];
 
   ionViewWillEnter() {
